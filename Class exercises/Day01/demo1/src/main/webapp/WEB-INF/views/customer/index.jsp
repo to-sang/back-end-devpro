@@ -1,21 +1,61 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
+<html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <title>Trang thơ</title>
-    <c:set var="context" value="${pageContext.servletContext.contextPath}" />
-    <link href="${context}/css/style.css">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demo</title>
+    <link rel="stylesheet" href="${context}/css/demojsp.css">
 </head>
+
 <body>
-    <h1>TUỔI THƠ</h1>
-   <i>
-       <mark>Tuổi thơ</mark> bắt <b>dế</b> đi cày <br>
-       Nhà nghèo <b>dế</b> cũng một bày như <b>trâu</b> <br>
-       Sân nhà chẳng dám cày sâu <br>
-       Lối ngang lối dọc trước sau đi về <br>
-       Bây giờ ngồi nghĩ nghành nghề <br>
-       Nhớ sao tiếng <b>dế</b> đêm hè kêu vang 
-   </i>
+<h3 style="text-align: center;">ĐĂNG KÝ THÀNH VIÊN</h3>
+<form method="POST" name="form" action="" onsubmit="return check()">
+    <table align="center">
+        <tr>
+            <td><label for="name">Họ và tên</label></td>
+            <td><input type="text" placeholder="Nhập họ và tên" name="name"></td>
+            <td id="errorname" style="color: red;"></td>
+        </tr>
+        <tr>
+            <td><label for="pwd">Mật khẩu</label></td>
+            <td><input type="password" placeholder="********" name="pwd"></td>
+            <td id="errorpwd" style="color: red;"></td>
+        </tr>
+        <tr>
+            <td><label for="pwd-rp">Khẳng định mật khẩu</label></td>
+            <td><input type="password" placeholder="********" name="pwdrp"></td>
+            <td id="errorpwdrp" style="color: red;"></td>
+        </tr>
+        <tr>
+            <td><label for="birthday">Ngày tháng năm sinh</label></td>
+            <td><input type="date" placeholder="dd-mm-yyyy" size="16" name="date"></td>
+            <td id="errordate" style="color: red;"></td>
+        </tr>
+        <tr>
+            <td><label for="phone">Số điện thoại</label></td>
+            <td><input type="text" placeholder="0923412345" size="19" name="pnb"></td>
+            <td id="errorpnb" style="color: red;"></td>
+        </tr>
+        <tr>
+            <td><label for="img">Đường dẫn ảnh</label></td>
+            <td><input type="file" value="Chọn tệp" name="file"></td>
+            <td id="errorfile" style="color: red;"></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>
+                <input type="submit" value="Đăng ký">
+                <input type="reset" value="Hủy bỏ">
+            </td>
+        </tr>
+    </table>
+</form>
+<img src="../img/CÁ ĐIÊU HỒNG KHO TIÊU.PNG" alt="Demo JSP">
+<script src="../js/demojsp.js"></script>
 </body>
+
 </html>
